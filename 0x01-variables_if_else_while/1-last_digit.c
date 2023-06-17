@@ -14,12 +14,14 @@
 int main(void)
 {
 	int n;
+	int lastdgt;
+	char lastS;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
-	int lastdgt = n % 10;
-	char lastS = "and is less than 6 and not 0";
+	lastdgt = n % 10;
+	lastS = "and is less than 6 and not 0";
 
 	if (lastdgt > 5)
 	{
@@ -33,7 +35,7 @@ int main(void)
 		}
 		else
 		{
-			if (lastdgt < 6 & lastdgt != 0)
+			if ((lastdgt < 6) && (lastdgt != 0))
 			{
 				printf("Last digit of %d is %d %s\n", n, lastdgt, lastS);
 			}
