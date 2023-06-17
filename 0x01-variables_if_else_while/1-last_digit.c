@@ -15,7 +15,7 @@ int main(void)
 {
 	int n;
 	int lastdgt;
-	char lastS;
+	char *lastS;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
