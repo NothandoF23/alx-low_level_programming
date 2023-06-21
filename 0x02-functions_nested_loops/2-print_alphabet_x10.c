@@ -2,6 +2,7 @@
 
 /**
  * print_alphabet_x10 - function that prints alphabets 10 times
+ * @void: takes no parameters/ arguments
  * Return: nothing
  */
 
