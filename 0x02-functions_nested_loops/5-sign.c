@@ -1,0 +1,27 @@
+#include "main.h"
+
+/**
+ * print_sign - checks if a number is negative / positive
+ * Return: 1 if n is greater than 0, 0 if n is 0, - if n < 0
+ * @n: is the int value argument/ parameter
+ */
+
+int print_sign(int n)
+{
+	if (n > 0)
+	{
+
+		return (1);
+		_putchar('+');
+	}
+	else if (n == 0)
+	{
+		return (0);
+		_putchar('0');
+	}
+	else
+	{
+		return (-1);
+		_putchar('-')
+	}
+}
