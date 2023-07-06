@@ -40,10 +40,9 @@ int checkPalindrome(char *s, int index)
 		}
 		checkPalindrome(s, index + 1);
 	}
-	else
-	{
-		return (0);
-	}
+
+	return (0);
+	
 }
 
 
