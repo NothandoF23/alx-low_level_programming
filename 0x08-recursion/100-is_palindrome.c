@@ -41,7 +41,7 @@ int checkPalindrome(char *s, int index)
 	{
 		return (1);
 	}
-	checkPalindrome(s, index + 1);
+	return (checkPalindrome(s, index + 1));
 
 }
 
