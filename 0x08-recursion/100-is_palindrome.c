@@ -37,14 +37,12 @@ int checkPalindrome(char *s, int index)
 		return (0);
 	}
 
-	else if (s[index] == s[len])
+	if (index + 1 == len || index == len)
 	{
-		if (index + 1 == len || index == len)
-		{
-			return (1);
-		}
-		checkPalindrome(s, index + 1);
+		return (1);
 	}
+	checkPalindrome(s, index + 1);
+
 }
 
 
