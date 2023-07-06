@@ -32,7 +32,12 @@ int checkPalindrome(char *s, int index)
 {
 	int len = _strlen(s) - (index + 1);
 
-	if (s[index] == s[len])
+	if (s[index] != s[len])
+	{
+		return (0);
+	}
+
+	else if (s[index] == s[len])
 	{
 		if (index + 1 == len || index == len)
 		{
@@ -45,7 +50,7 @@ int checkPalindrome(char *s, int index)
 	{
 		return (0);
 	}
-	
+
 }
 
 
