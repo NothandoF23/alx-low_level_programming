@@ -1,44 +1,50 @@
 #include "main.h"
+
 /**
- * revString - function that prints a string in reverse
+ * _strlen - function that returns the length of a string.
  * @s: string input argument
- * Return: nothing
+ * Return: length of string
  */
 
-int check(char *s)
+int _strlen(char *s)
 {
-	int leftIndex, rightIndex, length = 0;
-
-        while (*s != '\0')
-        {
-		length++;
-                s++;
-        }
-
-	if (length < 1)
+	if (*s == '\0')
 	{
-		return (1);
+		return (0);
 	}
 
-	leftIndex = 0;
-	rightIndex = length - 1;
-
-	if(NULL == s || leftIndex < 0 || rightIndex < 0)
+	else
 	{
-         return 0;
+		s++;
+		return (_strlen(s) + 1);
 	}
-      
-	if(leftIndex >= rightIndex)
-         	return 1;
-     	if(s[leftIndex] == s[rightIndex])
-     	{
-
-         return check(s, leftIndex + 1, rightIndex - 1);
-     	}
-      
-     	return 0;
 }
 
+
+/**
+ * checkPalindrome - function checks if string is a palindrome
+ * @s: string input argument
+ * @index: beginning of string
+ * Return: 1 if s is palindrome, 0 otherwise
+ */
+
+int checkPalindrome(char *s, int index)
+{
+	int len = _strlen(s) - (index + 1);
+
+	if (s[index] == s[len])
+	{
+		if (index + 1 == len || index == len)
+		{
+			return (1);
+		}
+		checkPalindrome(s, index + 1);
+	}
+	else
+	{
+		return (0);
+	}
+}
 
 
 /**
@@ -48,5 +54,5 @@ int check(char *s)
  */
 int is_palindrome(char *s)
 {
-	return check(s);
+	return (checkPalindrome(s, 0));
 }
