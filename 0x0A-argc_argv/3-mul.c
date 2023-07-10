@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.h"
+#include <stdlib.h>
 
 /**
  * main - function prints the product of 2 arguments
@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
+	int num1, num2, mul;
 
 	if (argc < 3 || argc > 3)
 	{
@@ -19,9 +19,10 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	i = argv[1] * argv[2];
+	num1 = atoi(rgv[1]); 
+	num2 = atoi(argv[2]);
 
-	printf("%d\n", i);
+	printf("%d\n", num1 * num2);
 	return (0);
 }
 
