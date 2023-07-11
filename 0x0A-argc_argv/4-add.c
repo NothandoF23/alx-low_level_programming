@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 #include "main.h"
 
 /**
@@ -20,9 +21,9 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < argc; i++)
 	{
-		if ((argv[i] >= "0" && argc[i] <= "9"))
+		if (isdigit(argv[i]))
 	{
-		i += argv[i];
+		i += convertChartoI(argv[i]);
 	}
 		printf("Error\n");
 		return (1);
