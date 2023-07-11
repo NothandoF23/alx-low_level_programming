@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
-#include "main.h"
+#include <stdlib.h>
 
 /**
  * main - function prints the sum of 2 numbers
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	{
 		if (isdigit(argv[i]))
 	{
-		i += convertChartoI(argv[i]);
+		i += atoi(argv[i]);
 	}
 		printf("Error\n");
 		return (1);
