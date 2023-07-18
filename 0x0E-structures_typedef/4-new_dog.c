@@ -1,31 +1,6 @@
 #include "dog.h"
-#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-
-/**
- * *_strcpy - copies the string pointed to by src
- * including the terminating null byte (\0)
- * to the buffer pointed to by dest
- * @dest: pointer to the buffer in which we copy the string
- * @src: string to be copied
- *
- * Return: the pointer to dest
- */
-char *_strcpy(char *dest, char *src)
-{
-	int len, i;
-
-	len = strlen(src);
-
-	for (i = 0; i < len; i++)
-	{
-		dest[i] = src[i];
-	}
-	dest[i] = '\0';
-
-	return (dest);
-}
-
 
 /**
  * new_dog - creates a new dog
@@ -37,8 +12,8 @@ char *_strcpy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int len1, len2;
-	dog_t d;
+	int len1, len2, i, j;
+	dog_t *d;
 
 	len1 = strlen(name);
 	len2 = strlen(owner);
@@ -60,10 +35,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(d->name);
 		return (NULL);
 	}
-	_strcpy(d->name, name);
-	_strcpy(d->owner, owner);
 	d->age = age;
-
+	for (i = 0; i < len1; i++)
+	{
+		d->name[i] = name[i];
+	}
+	for (j = 0; j < len2; j++)
+	{
+		d->owner[i] = owner[j];
+		i++;
+	}
+	d->owner[i] = '\0';
 	return (d);
 }
 
