@@ -31,9 +31,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	newNode->len = i;
 	newNode->next = NULL;
 
-	if (last == NULL)
+	if (*head == NULL)
 	{
-		last = newNode;
+		*head = newNode;
 		return (newNode);
 	}
 
