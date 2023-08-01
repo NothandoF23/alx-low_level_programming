@@ -15,15 +15,15 @@ int sum_listint(listint_t *head)
 
 	sum = 0;
 
-	if (listint_len(const(head)) > 0)
+	if (head == NULL)
 	{
-		while (head)
-		{
-			sum = head->n;
-			head = head->next;
-		}
-		return (sum);
+		return (0);
 	}
 
-	return (0);
+	while (head)
+	{
+		sum += head->n;
+		head = head->next;
+	}
+	return (sum);
 }
