@@ -3,7 +3,7 @@
 
 /**
  * free_listint - frees a linked list
- * @head: list_t list to be freed
+ * @head: first node  of list to be freed
  */
 void free_listint(listint_t *head)
 {
@@ -12,7 +12,6 @@ void free_listint(listint_t *head)
 	while (head)
 	{
 		temp = head->next;
-		free(head->n);
 		free(head);
 		head = temp;
 	}
