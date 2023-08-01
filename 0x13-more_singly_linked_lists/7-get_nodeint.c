@@ -18,7 +18,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	if (listint_len(const(head)) >= index) //check if index is within list len
 	{
 	
-		while (temp && i < index + 1)
+		while (temp && i < index)
 		{
 			i++;
 			temp = temp->next;
