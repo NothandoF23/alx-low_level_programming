@@ -22,11 +22,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	if (filename == NULL)
-	{
-		return (0);
-	}
-
 	i = open(filename, O_RDONLY);
 	if (i == -1)
 	{
