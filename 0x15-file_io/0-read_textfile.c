@@ -1,6 +1,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * read_textfile - function that reads a text file and prints
@@ -10,10 +11,10 @@
  * Return: the number of letters read
  */
 
-size_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *fl;
-	size_t n, len;
+	ssize_t i, j, len;
 
 	fl = (*char) calloc(letters, sizeof(char));
 	if (fl == NULL)
@@ -26,20 +27,20 @@ size_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	n = open(filename, O_RDWR);
-	if (n == -1)
+	i = open(filename, O_RDONLY);
+	if (i == -1)
 		return (0);
 
-	n = read(filename, fl, letters);
-	if (n == -1)
+	j = read(i, fl, letters);
+	if (j == -1)
 		return (0);
 
 
-	len = write(n, filename, letters);
+	len = write(STDOUT_FILENO, fl, j);
 	if (len == -1)
 		return (0);
 
-	return (n);
-
-	close(n);
+	free(fl);
+	close(i);
+	return (len);
 }
