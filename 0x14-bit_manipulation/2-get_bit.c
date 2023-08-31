@@ -3,7 +3,7 @@
 /**
  * get_bit - returns the value of a bit at a given index.
  * @n: integer input to convert
- * @index: index of bit to return 
+ * @index: index of bit to return
  * Return: bit at given index, else -1
  */
 
