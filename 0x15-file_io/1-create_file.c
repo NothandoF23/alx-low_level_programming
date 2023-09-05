@@ -9,7 +9,8 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fl, printed, len = 0;
+	int fl, printed;
+	size_t count;
 
 	if (filename == NULL)
 	{
@@ -18,19 +19,19 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		for (len = 0; text_content[len];)
-			len++;
+		for (count = 0; text_content[count];)
+			count++;
 	}
 
 	fl = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	printed = write(fl, text_content, len);
+	printed = write(fl, text_content, count);
 
 	if (fl == -1 || printed == -1)
 	{
 		return (-1);
 	}
 
-	close(fL);
+	close(fl);
 
 	return (1);
 }
