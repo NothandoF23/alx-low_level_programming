@@ -9,19 +9,20 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fl, printed, len = 0;
+	int fl, printed;
+	size_t count;
 
 	if (filename == NULL)
 		return (-1);
 
 	if (text_content != NULL)
 	{
-		for (len = 0; text_content[len];)
-			len++;
+		for (count = 0; text_content[count];)
+			count++;
 	}
 
 	fl = open(filename, O_WRONLY | O_APPEND);
-	printed = write(o, text_content, len);
+	printed = write(fl, text_content, count);
 
 	if (printed == -1 || fl == -1)
 	{
