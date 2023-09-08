@@ -9,7 +9,8 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fl, printed, count;
+	int fl, printed;
+	size_t count;
 
 	if (filename == NULL)
 		return (-1);
