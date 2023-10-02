@@ -1,6 +1,10 @@
 #include "main.h"
 #define BYTE_SIZE 1024
 
+char *create_buffer(char *file);
+void error_100(int fd);
+void error_99(int w, int to, char *buffer, char **argv);
+
 /**
  * create_buffer -  Creates a buffer and
  * Allocates 1024 bytes for the buffer
@@ -45,7 +49,7 @@ void error_100(int fd)
  * @buffer: buffer
  * @argv: argument vector
  */
-void error_99(int w, int to, char *buffer, char *argv)
+void error_99(int w, int to, char *buffer, char **argv)
 {
 
 	if (to == -1 || w == -1)
